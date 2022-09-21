@@ -33,7 +33,7 @@ email via a particular gmail account.
       and constructs a credentials file out of it. I made a [page](https://otto.pixel.nyc/home/google-grant) on the Otto  
       Site that does this.  
     - You must also set the scopes that your app needs access to here. Sending  
-      email via SMTP requires the restricted scope "https://mail.google.com/"  
+      email via SMTP requires the restricted scope `https://mail.google.com/`  
 
 4. Make sure your app has access to restricted scopes
     - In order to use restricted scopes, the administrator of the google  
@@ -51,8 +51,6 @@ Remember that you must first make a single call to Init and pass in the from
 address and a path to the credentials file. This initializes the email client.  
 Then you can simply call Send to send emails. You can send attachments as well  
 by passing in an array of filepaths as the 'attachments' argument to Send.  
-
-**Example**  
 
 ```go
 import "github.com/bitwitch/email"
