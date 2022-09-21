@@ -1,4 +1,4 @@
-# Send email via Google's SMTP server
+# Send email via Google's SMTP server using OAuth2
 
 ### Why this package exists
 My use case is I want to send email programatically. Many of my programs that  
