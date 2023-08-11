@@ -56,14 +56,17 @@ by passing in an array of filepaths as the 'attachments' argument to Send.
 import "github.com/bitwitch/email"
 
 func main() {
-    email.Init("the_from_address@email.com", "path_to_credentials_file.json")
+    err := email.Init("the_from_address@email.com", "path_to_credentials_file.json")
+    if err != nil {
+        panic(err)
+    }
 
     subject := "Subject"
     messages := []string{"message number one", "message number two"}
     attachments := []string{}
     recipients := []string{"first_recipient@email.com"}
 
-    err := email.Send(subject, messages, attachments, recipients)
+    err = email.Send(subject, messages, attachments, recipients)
     if err != nil {
         panic(err)
     }
