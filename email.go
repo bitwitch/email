@@ -27,8 +27,13 @@ type attachment struct {
 // globals
 var emailCredentials *EmailCredentials
 var fromAddr string
+var initialized = false
 
 func Init(fromAddress, credentialsFilepath string) error {
+	if initialized {
+		return nil 
+	}
+
     emailCredentials = new(EmailCredentials)
     fromAddr = fromAddress
 
@@ -41,6 +46,7 @@ func Init(fromAddress, credentialsFilepath string) error {
         return err
     }
 
+	initialized = true
     return nil
 }
 
